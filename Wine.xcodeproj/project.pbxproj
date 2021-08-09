@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD343F3426BEB0E600E7F952 /* шампанское.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD343F3326BEB0E600E7F952 /* шампанское.jpeg */; };
+		BD343F3626BEB11400E7F952 /* белое вино.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD343F3526BEB11400E7F952 /* белое вино.jpeg */; };
+		BD343F3826BEB12700E7F952 /* красное вино.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD343F3726BEB12700E7F952 /* красное вино.jpeg */; };
+		BD343F3A26BEB13D00E7F952 /* розовое.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD343F3926BEB13D00E7F952 /* розовое.jpeg */; };
+		BD343F3D26BEC01600E7F952 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD343F3C26BEC01600E7F952 /* TableViewCell.swift */; };
 		BDD0063326BBE60B00581353 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD0063226BBE60B00581353 /* AppDelegate.swift */; };
 		BDD0063526BBE60B00581353 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD0063426BBE60B00581353 /* SceneDelegate.swift */; };
 		BDD0063726BBE60B00581353 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD0063626BBE60B00581353 /* ViewController.swift */; };
@@ -14,9 +19,17 @@
 		BDD0063C26BBE60D00581353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDD0063B26BBE60D00581353 /* Assets.xcassets */; };
 		BDD0063F26BBE60D00581353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD0063D26BBE60D00581353 /* LaunchScreen.storyboard */; };
 		BDD0064726BBFA5600581353 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD0064626BBFA5600581353 /* Model.swift */; };
+		BDD0066D26BD55C300581353 /* AllWinesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD0066C26BD55C300581353 /* AllWinesController.swift */; };
+		BDD0066F26BD709700581353 /* погреб.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BDD0066E26BD709700581353 /* погреб.jpeg */; };
+		BDD0067126BD74FF00581353 /* вина.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BDD0067026BD74FF00581353 /* вина.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD343F3326BEB0E600E7F952 /* шампанское.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "шампанское.jpeg"; sourceTree = "<group>"; };
+		BD343F3526BEB11400E7F952 /* белое вино.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "белое вино.jpeg"; sourceTree = "<group>"; };
+		BD343F3726BEB12700E7F952 /* красное вино.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "красное вино.jpeg"; sourceTree = "<group>"; };
+		BD343F3926BEB13D00E7F952 /* розовое.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "розовое.jpeg"; sourceTree = "<group>"; };
+		BD343F3C26BEC01600E7F952 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BDD0062F26BBE60B00581353 /* Wine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDD0063226BBE60B00581353 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDD0063426BBE60B00581353 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +39,9 @@
 		BDD0063E26BBE60D00581353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDD0064026BBE60D00581353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDD0064626BBFA5600581353 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		BDD0066C26BD55C300581353 /* AllWinesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWinesController.swift; sourceTree = "<group>"; };
+		BDD0066E26BD709700581353 /* погреб.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "погреб.jpeg"; sourceTree = "<group>"; };
+		BDD0067026BD74FF00581353 /* вина.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "вина.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +55,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD343F3B26BEB23300E7F952 /* Картинки */ = {
+			isa = PBXGroup;
+			children = (
+				BDD0067026BD74FF00581353 /* вина.jpeg */,
+				BD343F3926BEB13D00E7F952 /* розовое.jpeg */,
+				BDD0066E26BD709700581353 /* погреб.jpeg */,
+				BD343F3326BEB0E600E7F952 /* шампанское.jpeg */,
+				BD343F3526BEB11400E7F952 /* белое вино.jpeg */,
+				BD343F3726BEB12700E7F952 /* красное вино.jpeg */,
+			);
+			path = "Картинки";
+			sourceTree = "<group>";
+		};
 		BDD0062626BBE60B00581353 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +89,9 @@
 			children = (
 				BDD0063226BBE60B00581353 /* AppDelegate.swift */,
 				BDD0063426BBE60B00581353 /* SceneDelegate.swift */,
+				BDD0066C26BD55C300581353 /* AllWinesController.swift */,
+				BD343F3C26BEC01600E7F952 /* TableViewCell.swift */,
+				BD343F3B26BEB23300E7F952 /* Картинки */,
 				BDD0064626BBFA5600581353 /* Model.swift */,
 				BDD0063626BBE60B00581353 /* ViewController.swift */,
 				BDD0063826BBE60B00581353 /* Main.storyboard */,
@@ -127,9 +159,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD343F3A26BEB13D00E7F952 /* розовое.jpeg in Resources */,
 				BDD0063F26BBE60D00581353 /* LaunchScreen.storyboard in Resources */,
+				BDD0066F26BD709700581353 /* погреб.jpeg in Resources */,
+				BDD0067126BD74FF00581353 /* вина.jpeg in Resources */,
 				BDD0063C26BBE60D00581353 /* Assets.xcassets in Resources */,
 				BDD0063A26BBE60B00581353 /* Main.storyboard in Resources */,
+				BD343F3826BEB12700E7F952 /* красное вино.jpeg in Resources */,
+				BD343F3626BEB11400E7F952 /* белое вино.jpeg in Resources */,
+				BD343F3426BEB0E600E7F952 /* шампанское.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +181,8 @@
 				BDD0063726BBE60B00581353 /* ViewController.swift in Sources */,
 				BDD0063326BBE60B00581353 /* AppDelegate.swift in Sources */,
 				BDD0063526BBE60B00581353 /* SceneDelegate.swift in Sources */,
+				BD343F3D26BEC01600E7F952 /* TableViewCell.swift in Sources */,
+				BDD0066D26BD55C300581353 /* AllWinesController.swift in Sources */,
 				BDD0064726BBFA5600581353 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +331,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52Q5534KZM;
 				INFOPLIST_FILE = Wine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -309,6 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52Q5534KZM;
 				INFOPLIST_FILE = Wine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

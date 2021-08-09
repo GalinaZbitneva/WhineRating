@@ -25,48 +25,60 @@ struct Rating: Codable {
 }
 
 
+class AllWine{
+    
+    var wine: [Response?]
+    var red: [Response?]
+    var white: [Response]
+    var sparkling: [Response]
+    var rose: [Response]
+    
+    init(red:[Response?], white:[Response], sparkling:[Response],rose:[Response], wine:[Response?]) {
+        self.red = red
+        self.white = white
+        self.sparkling = sparkling
+        self.rose = rose
+        self.wine = wine
+    }
+}
+        
 
-class Wine {
-    
-    var Wine: [Response] = []
-    var redWine: [Response] = []
-    var whiteWine: [Response] = []
-    var sparklingWine: [Response] = []
-    var roseWine: [Response] = []
-    
-    let redWineURL = "https://api.sampleapis.com/wines/reds"
-    let whiteWineURL = "https://api.sampleapis.com/wines/whites"
-    let sparklingWhineURL = "https://api.sampleapis.com/wines/sparkling"
-    let roseWhineURL = "https://api.sampleapis.com/wines/rose"
-    
-    
-    
-    func getWine(from url: String){
-
-        let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { [self]data, response, error in
-            guard let data = data , error == nil else {
-                print("something went wrong")
-                return
-            }
-             //значит получили данные
-            var result: [Response]?
-            
-            do{
-                result = try JSONDecoder().decode([Response].self, from: data)
+extension UIImageView {
+    func loadImageFromURL(url: URL){
+        DispatchQueue.global().async {
+            [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data){
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                    
+                }
                 
             }
-            catch{
-                print("faild to convert")
-            }
-            guard let json = result else {
-                return
-            }
-            
-            Wine = json
-          
-        })
-        task.resume()
-       
+        }
     }
-    
+}
+
+/*
+
+private func downloadImageUniversal(from url: URL, to Image: UIImageView) {
+    print("download started")
+    getData(from: url){data, response, error in
+        guard let data = data, error == nil else {
+            return
+        }
+        print("download finished")
+        
+        DispatchQueue.main.async {
+            [weak self] in
+            Image.image = UIImage(data: data)
+        }
+    }
+}
+
+ */
+
+func getData (from url: URL, completion: @escaping (Data?, URLResponse?, Error?)->()){
+    URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
 }
