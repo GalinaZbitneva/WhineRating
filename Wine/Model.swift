@@ -8,15 +8,13 @@
 import Foundation
 import UIKit
 
-
-struct Response: Codable {
+struct WineResponse: Codable {
    var winery: String?
    var wine: String?
    var rating: Rating
    var location: String?
    var image: String?
    var id: Int?
-   
 }
 
 struct Rating: Codable {
@@ -25,15 +23,33 @@ struct Rating: Codable {
 }
 
 
-class AllWine{
+struct ParticularWineResponse: Codable {
+    var id: Int?
+    var name: String?
+    var price: Int?
+    var rating: Int?
+    var image: String?
+    var description: String?
+    var reviews: [Reviews]?
+}
+
+struct Reviews: Codable {
+    var id: Int?
+    var name: String?
+    var rating: Int?
+    var text: String?
+    var likes: Int?
+    var dislikes: Int?
+}
+
+class AllWine {
+    var wine: [WineResponse?]
+    var red: [WineResponse?]
+    var white: [WineResponse?]
+    var sparkling: [WineResponse?]
+    var rose: [WineResponse?]
     
-    var wine: [Response?]
-    var red: [Response?]
-    var white: [Response]
-    var sparkling: [Response]
-    var rose: [Response]
-    
-    init(red:[Response?], white:[Response], sparkling:[Response],rose:[Response], wine:[Response?]) {
+    init(red:[WineResponse?], white:[WineResponse?], sparkling:[WineResponse?],rose:[WineResponse?], wine:[WineResponse?]) {
         self.red = red
         self.white = white
         self.sparkling = sparkling
@@ -42,6 +58,9 @@ class AllWine{
     }
 }
         
+
+
+
 
 extension UIImageView {
     func loadImageFromURL(url: URL){

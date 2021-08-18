@@ -1,42 +1,28 @@
 //
-//  AllWinesController.swift
+//  KindOfWineTableViewController.swift
 //  Wine
 //
-//  Created by Галина Збитнева on 06.08.2021.
+//  Created by Галина Збитнева on 12.08.2021.
 //
 
 import UIKit
 
 
-
+class KindOfWineTableViewController: UITableViewController {
     
-
-class AllWinesController: UITableViewController {
-    
-    
-    
+    var selectedWine:[WineResponse?] = []
+    var selectedWineCell: WineResponse?
+    var particularWine: ParticularWineResponse?
+    let particularWineURL = "http://api.2516.ru:8080/api/v1/wine/"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("red wine \(allWines.red.count)")
-        print("sparkling wine \(allWines.white.count)")
-        print("white wine \(allWines.rose.count)")
-        print("rose wine \(allWines.sparkling.count)")
-        
-        allWines.wine.append(contentsOf: allWines.red)
-        allWines.wine.append(contentsOf: allWines.white)
-        allWines.wine.append(contentsOf: allWines.sparkling)
-        allWines.wine.append(contentsOf: allWines.rose)
-        
-        //Wine.append(contentsOf: allWines.white)
-        //Wine.append(contentsOf: allWines.sparkling)
-        //Wine.append(contentsOf: allWines.rose)
-        
-        print(allWines.wine.count)
-   
+        print("selected wine \(selectedWine.count)")
 
-        
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
@@ -49,17 +35,17 @@ class AllWinesController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return allWines.wine.count
-        
+        return selectedWine.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "wineCell", for: indexPath) as! TableViewCell
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "kindOfWineCell", for: indexPath) as! TableViewCell
+        
         // Configure the cell...
-        guard let currentWine = allWines.wine[indexPath.row]?.wine, let currentRatint = allWines.wine[indexPath.row]?.rating.average
-, let currentImage = (allWines.wine[indexPath.row]?.image) else {
+        guard let currentWine = selectedWine[indexPath.row]?.wine, let currentRatint = selectedWine[indexPath.row]?.rating.average
+, let currentImage = (selectedWine[indexPath.row]?.image) else {
+            
             return cell
         }
                 
@@ -71,13 +57,31 @@ class AllWinesController: UITableViewController {
         
         return cell
 
-        // Configure the cell...
 
-       
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130 //or whatever you need
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToParticularWineController" {
+            getSomeWine(from: particularWineURL + String(Int.random(in: 0..<101)))
+            sleep(2)
+            (segue.destination as! ParticularWineViewController).wineFromKindOfWine = selectedWineCell
+            (segue.destination as! ParticularWineViewController).someWine = particularWine
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let wineInCell = selectedWine[indexPath.row]
+        selectedWineCell = wineInCell
+        performSegue(withIdentifier: "goToParticularWineController", sender: self)
+    }
+    
+    
     /*
+     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
@@ -121,6 +125,37 @@ class AllWinesController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func getSomeWine(from url: String){
+
+        let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: {[self]data, response, error in
+                guard let data = data , error == nil else {
+                    print("something went wrong")
+                    return
+                }
+                 //значит получили данные
+                var result: ParticularWineResponse?
+                
+                do{
+                    result = try JSONDecoder().decode(ParticularWineResponse.self, from: data)
+                    
+                }
+                catch{
+                    print("faild to convert")
+                }
+                guard let json = result else {
+                    return
+                }
+                
+            particularWine = json
+           
+              
+            })
+            task.resume()
+           
+        }
+
+    
     public func downloadImageUniversal(from url: URL, to Image: UIImageView) {
         print("download started")
         getData(from: url){data, response, error in
