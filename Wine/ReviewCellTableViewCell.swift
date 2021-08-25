@@ -24,6 +24,7 @@ class ReviewCellTableViewCell: UITableViewCell {
     @IBOutlet weak var numberOfLikeLabel: UILabel!
     
     
+    @IBOutlet weak var starImage: UIImageView!
     @IBOutlet weak var numberOfDislikeLabel: UILabel!
     
     override func awakeFromNib() {

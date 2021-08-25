@@ -8,10 +8,13 @@
 import Foundation
 import UIKit
 
+var Wine: [WineResponse?] = []
+var selectedWine:[WineResponse?] = []
+
 struct WineResponse: Codable {
    var winery: String?
    var wine: String?
-   var rating: Rating
+   var rating: Rating?
    var location: String?
    var image: String?
    var id: Int?
@@ -57,8 +60,34 @@ class AllWine {
         self.wine = wine
     }
 }
-        
 
+
+func getWine(from url: String, completionHandler: (() -> Void)?) {
+    let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { data, response, error in
+        guard let data = data, error == nil else {
+            print("something went wrong")
+            return
+        }
+        //значит получили данные
+        var result: [WineResponse]?// имя структуры
+        
+        do {
+            result = try JSONDecoder().decode([WineResponse].self, from: data)
+        }
+        catch{
+            print("faild to convert")
+        }
+        guard let json = result else {
+            return
+        }
+        
+        Wine.append(contentsOf: json)
+        
+        completionHandler?()
+        
+    })
+    task.resume()
+}
 
 
 

@@ -58,7 +58,7 @@ class AllWinesController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "wineCell", for: indexPath) as! TableViewCell
 
         // Configure the cell...
-        guard let currentWine = allWines.wine[indexPath.row]?.wine, let currentRatint = allWines.wine[indexPath.row]?.rating.average
+        guard let currentWine = allWines.wine[indexPath.row]?.wine, let currentRatint = allWines.wine[indexPath.row]?.rating?.average
 , let currentImage = (allWines.wine[indexPath.row]?.image) else {
             return cell
         }

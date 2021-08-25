@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		BD04B13526C5513800C9D23B /* KindOfWineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04B13426C5513800C9D23B /* KindOfWineTableViewController.swift */; };
 		BD13F8A326CD4D470099482B /* ReviewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD13F8A226CD4D470099482B /* ReviewCellTableViewCell.swift */; };
+		BD13F8A726CE831C0099482B /* 17999_bookmark_favorite_star_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BD13F8A626CE831C0099482B /* 17999_bookmark_favorite_star_icon.png */; };
+		BD13F8A926CE832D0099482B /* 1169174_dislike_down_hand_media_social_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BD13F8A826CE832D0099482B /* 1169174_dislike_down_hand_media_social_icon.png */; };
+		BD13F8AB26CE83550099482B /* 815262_bookmark_favorite_health_heart_like_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BD13F8AA26CE83550099482B /* 815262_bookmark_favorite_health_heart_like_icon.png */; };
 		BD2BC02526CBF33300613066 /* ParticularWineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2BC02426CBF33300613066 /* ParticularWineViewController.swift */; };
 		BD343F3426BEB0E600E7F952 /* шампанское.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD343F3326BEB0E600E7F952 /* шампанское.jpeg */; };
 		BD343F3626BEB11400E7F952 /* белое вино.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD343F3526BEB11400E7F952 /* белое вино.jpeg */; };
@@ -30,6 +33,9 @@
 /* Begin PBXFileReference section */
 		BD04B13426C5513800C9D23B /* KindOfWineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindOfWineTableViewController.swift; sourceTree = "<group>"; };
 		BD13F8A226CD4D470099482B /* ReviewCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCellTableViewCell.swift; sourceTree = "<group>"; };
+		BD13F8A626CE831C0099482B /* 17999_bookmark_favorite_star_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 17999_bookmark_favorite_star_icon.png; path = ../../../../../Downloads/17999_bookmark_favorite_star_icon.png; sourceTree = "<group>"; };
+		BD13F8A826CE832D0099482B /* 1169174_dislike_down_hand_media_social_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1169174_dislike_down_hand_media_social_icon.png; path = ../../../../../Downloads/1169174_dislike_down_hand_media_social_icon.png; sourceTree = "<group>"; };
+		BD13F8AA26CE83550099482B /* 815262_bookmark_favorite_health_heart_like_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 815262_bookmark_favorite_health_heart_like_icon.png; path = ../../../../../Downloads/815262_bookmark_favorite_health_heart_like_icon.png; sourceTree = "<group>"; };
 		BD2BC02426CBF33300613066 /* ParticularWineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticularWineViewController.swift; sourceTree = "<group>"; };
 		BD343F3326BEB0E600E7F952 /* шампанское.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "шампанское.jpeg"; sourceTree = "<group>"; };
 		BD343F3526BEB11400E7F952 /* белое вино.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "белое вино.jpeg"; sourceTree = "<group>"; };
@@ -69,6 +75,9 @@
 				BDD0066E26BD709700581353 /* погреб.jpeg */,
 				BD343F3326BEB0E600E7F952 /* шампанское.jpeg */,
 				BD343F3526BEB11400E7F952 /* белое вино.jpeg */,
+				BD13F8A826CE832D0099482B /* 1169174_dislike_down_hand_media_social_icon.png */,
+				BD13F8AA26CE83550099482B /* 815262_bookmark_favorite_health_heart_like_icon.png */,
+				BD13F8A626CE831C0099482B /* 17999_bookmark_favorite_star_icon.png */,
 				BD343F3726BEB12700E7F952 /* красное вино.jpeg */,
 			);
 			path = "Картинки";
@@ -170,9 +179,12 @@
 			files = (
 				BD343F3A26BEB13D00E7F952 /* розовое.jpeg in Resources */,
 				BDD0063F26BBE60D00581353 /* LaunchScreen.storyboard in Resources */,
+				BD13F8AB26CE83550099482B /* 815262_bookmark_favorite_health_heart_like_icon.png in Resources */,
 				BDD0066F26BD709700581353 /* погреб.jpeg in Resources */,
 				BDD0067126BD74FF00581353 /* вина.jpeg in Resources */,
+				BD13F8A726CE831C0099482B /* 17999_bookmark_favorite_star_icon.png in Resources */,
 				BDD0063C26BBE60D00581353 /* Assets.xcassets in Resources */,
+				BD13F8A926CE832D0099482B /* 1169174_dislike_down_hand_media_social_icon.png in Resources */,
 				BDD0063A26BBE60B00581353 /* Main.storyboard in Resources */,
 				BD343F3826BEB12700E7F952 /* красное вино.jpeg in Resources */,
 				BD343F3626BEB11400E7F952 /* белое вино.jpeg in Resources */,

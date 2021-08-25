@@ -9,15 +9,27 @@ import UIKit
 
 
 class KindOfWineTableViewController: UITableViewController {
-    
-    var selectedWine:[WineResponse?] = []
+    var currentURL: String?
+   // var selectedWine:[WineResponse?] = []
     var selectedWineCell: WineResponse?
     var particularWine: ParticularWineResponse?
     let particularWineURL = "http://api.2516.ru:8080/api/v1/wine/"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectedWine = []
+        if currentURL != nil {
+            getWine(from: currentURL!){
+                DispatchQueue.main.async {
+                    selectedWine = Wine
+                    Wine = []
+                    self.tableView.reloadData()
+                }
+        }
+        }
         print("selected wine \(selectedWine.count)")
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -43,7 +55,7 @@ class KindOfWineTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "kindOfWineCell", for: indexPath) as! TableViewCell
         
         // Configure the cell...
-        guard let currentWine = selectedWine[indexPath.row]?.wine, let currentRatint = selectedWine[indexPath.row]?.rating.average
+        guard let currentWine = selectedWine[indexPath.row]?.wine, let currentRatint = selectedWine[indexPath.row]?.rating?.average
 , let currentImage = (selectedWine[indexPath.row]?.image) else {
             
             return cell

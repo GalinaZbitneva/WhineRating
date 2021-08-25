@@ -7,7 +7,7 @@
 
 import UIKit
 
-var Wine: [WineResponse?] = []
+
 var redWine: [WineResponse?] = []
 var whiteWine: [WineResponse?] = []
 var sparklingWine: [WineResponse?] = []
@@ -34,25 +34,20 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "whiteWineSegue" {
-            
-        getWhiteWine(from: baseUrl + whiteWineURL)
-            sleep(2)
-            (segue.destination as! KindOfWineTableViewController).selectedWine = allWines.white
+       // getWhiteWine(from: baseUrl + whiteWineURL)
+           // sleep(2)
+            //(segue.destination as! KindOfWineTableViewController).selectedWine = allWines.white
+            (segue.destination as! KindOfWineTableViewController).currentURL = baseUrl + whiteWineURL
+
         }
         if segue.identifier == "redWineSegue" {
-            getRedWine(from: baseUrl + redWineURL)
-            sleep(2)
-            (segue.destination as! KindOfWineTableViewController).selectedWine = allWines.red
+            (segue.destination as! KindOfWineTableViewController).currentURL = baseUrl + redWineURL
         }
         if segue.identifier == "roseWineSegue" {
-            getRoseWine(from: baseUrl + roseWhineURL)
-            sleep(2)
-            (segue.destination as! KindOfWineTableViewController).selectedWine = allWines.rose
+            (segue.destination as! KindOfWineTableViewController).currentURL = baseUrl + roseWhineURL
         }
         if segue.identifier == "sparklingWineSegue" {
-            getSparklingWine(from: baseUrl + sparklingWhineURL)
-            sleep(2)
-            (segue.destination as! KindOfWineTableViewController).selectedWine = allWines.sparkling
+            (segue.destination as! KindOfWineTableViewController).currentURL = baseUrl + sparklingWhineURL
         }
         
     }
@@ -77,32 +72,7 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "sparklingWineSegue", sender: self)
     }
     
-    func getWine(from url: String) {
-        let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { [self]data, response, error in
-            guard let data = data, error == nil else {
-                print("something went wrong")
-                return
-            }
-            //значит получили данные
-            var result: [WineResponse]?// имя структуры
-            
-            do {
-                result = try JSONDecoder().decode([WineResponse].self, from: data)
-            }
-            catch{
-                print("faild to convert")
-            }
-            guard let json = result else {
-                return
-            }
-            
-            Wine.append(contentsOf: json)
-            
-            
-        })
-        task.resume()
-    }
-
+    
     func getRedWine(from url: String) {
         let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { [self]data, response, error in
             guard let data = data , error == nil else {
